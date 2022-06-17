@@ -1,4 +1,6 @@
-var days = [
+//#region variables
+let currentDate = new Date();
+let days = [
     "Sunday",
     "Monday",
     "Tuesday",
@@ -7,7 +9,7 @@ var days = [
     "Friday",
     "Saturday",
 ];
-const monthNames = [
+let monthNames = [
     "Jan",
     "Feb",
     "Mar",
@@ -22,20 +24,28 @@ const monthNames = [
     "Dec",
 ];
 
+let currentday = document.getElementById('currentday')
+let currentmonth = document.getElementById('currentmonth')
+let thelocation = document.getElementById('thelocation')
+let degnum = document.getElementById('degnum')
+let degicon = document.getElementById('degicon')
+let weatherstatus = document.getElementById('weatherstatus')
+let rainchange = document.getElementById('rainchange')
+let wind = document.getElementById('wind')
+let winddir = document.getElementById('winddir')
+let otherDay = document.getElementById('otherDay')
+
+//#endregion
+
+
 async function search(place = "cairo") {
     if (place != "") {
         let response = await fetch(
-            `https://api.weatherapi.com/v1/forecast.json?key=c66c0c47a7d843978ff195717220106&q=${place}&days=3`
+            `https://api.weatherapi.com/v1/forecast.json?key=a5a6d5b12cfd4fe8b5a70317221706&q=${place}&days=3`
         );
         let finalResponse = await response.json();
-
-        displayCurrent(
-            finalResponse.location,
-            finalResponse.current,
-            finalResponse.forecast.forecastday[0]
-        );
-        document.getElementById("otherDay").innerHTML = "";
-
+        console.log(finalResponse)
+        displayCurrent(finalResponse.location, finalResponse.current, finalResponse.forecast.forecastday[0]);
         displayAnother(finalResponse.forecast.forecastday);
     }
 }
@@ -43,36 +53,23 @@ search();
 
 
 function displayCurrent(location, current, forcastNow) {
-    let currentDate = new Date(current.last_updated);
-
-    document.querySelector(".current-day").innerHTML = days[currentDate.getDay()];
-
-    document.querySelector(".current-month").innerHTML =
-        currentDate.getDate() + monthNames[currentDate.getMonth()];
-
-    document.querySelector(".location").innerHTML = location.name;
-
-    document.querySelector(".deg-num").innerHTML =
-        current.temp_c + `<sup>o</sup>C`;
-
-    document.querySelector(
-        ".deg-icon"
-    ).innerHTML = `<img src="https:${current.condition.icon}" >`;
-
-    document.querySelector(".weather-status").innerHTML = current.condition.text;
-    document.querySelector(".rain-change").innerHTML =
-        forcastNow.day.daily_chance_of_rain + "%";
-    document.querySelector(".wind").innerHTML =
-        forcastNow.day.maxwind_kph + " km/h";
-    document.querySelector(".wind-dir").innerHTML = forcastNow.hour[0].wind_dir;
+    currentday.innerHTML = days[currentDate.getDay()];
+    currentmonth.innerHTML = currentDate.getDate() + monthNames[currentDate.getMonth()];
+    thelocation.innerHTML = location.name;
+    degnum.innerHTML = current.temp_c + `<sup>o</sup>C`;
+    degicon.innerHTML = `<img src="https:${current.condition.icon}" >`;
+    weatherstatus.innerHTML = current.condition.text;
+    rainchange.innerHTML = forcastNow.day.daily_chance_of_rain + "%";
+    wind.innerHTML = forcastNow.day.maxwind_kph + " km/h";
+    winddir.innerHTML = forcastNow.hour[0].wind_dir;
 }
 
 function displayAnother(forCast) {
-    let otherDay = "";
-
+    let theotherDay = "";
     for (let i = 1; i < forCast.length; i++) {
-        otherDay += `  <div class="col-lg-6 bg  ">
-      <div class="weather-card text-center other-day pb-5">
+        theotherDay += `
+      <div class="col-lg-6 bg  ">
+      <div class="weather-card text-center other-day ">
   
       <div class="weather-hd">
             <span>${days[new Date(forCast[i].date).getDay()]}</span>
@@ -95,7 +92,8 @@ function displayAnother(forCast) {
                   </div>
               </div>
       </div>
-  </div>`;
+  </div>
+  `;
     }
-    document.getElementById("otherDay").innerHTML += otherDay;
+    otherDay.innerHTML += theotherDay;
   }

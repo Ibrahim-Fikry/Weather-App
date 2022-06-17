@@ -58,61 +58,70 @@
     <div class="content  p-2">
         <div class="container ">
             <div class="search-location position-relative " id="search">
-                <input type="text" class="form-control rounded-pill " placeholder="Find your location..." id="search" oninput="search(this.value)">
+                <input type="text" class="w-100 rounded-pill " placeholder="Find your location..." id="search" oninput="search(this.value)">
                 <button class="position-absolute" type="button" value="" id="submit">Find</button>
             </div>
             <!-- weather -->
 
 
-            <div class="all mt-2 ">
-                <div class="row ">
-                    <div class="col-md-4   ">
-                        <div class="weather-card">
-                            <div class="weather-hd d-flex justify-content-between ">
-                                <span class="current-day"></span>
-                                <span class="current-month"></span>
-                            </div>
-                            <div class="weather-card-body ">
-                                <div class="location" id="location">
-
-                                </div>
-                                <div class="degree d-flex align-items-center ">
-                                    <div class="deg-num">
-                                        <p>
-                                        </p>
+            <div class="weather  mt-2 mb-5 ">
+                <div class="container ">
+                    <div class="all  ">
+                        <div class="row g-0">
+                            <div class="col-lg-4 ">
+                                <div class="weather-card">
+                                    <div class="weather-hd d-flex justify-content-between ">
+                                        <span id="currentday"></span>
+                                        <span id="currentmonth"></span>
                                     </div>
-                                    <div class="deg-icon">
-                                    </div>
-                                </div>
-                                <div class="weather-status ">
+                                    <div class="weather-card-body ">
+                                        <div id="thelocation">
 
-                                </div>
-                                <div class="weather-more-details">
-                                    <span class="me-4">
+                                        </div>
+                                        <div class="degree d-flex align-items-center ">
+                                            <div id="degnum">
+                                                <p>
+                                                </p>
+                                            </div>
+                                            <div id="degicon">
+                                            </div>
+                                        </div>
+                                        <div id="weatherstatus">
+
+                                        </div>
+                                        <div class="weather-more-details">
+                                            <span class="me-4">
                                                 <img src="images/icon-umberella.png" alt="" class="me-1">
-                                                <span class="rain-change">
+                                                <span id="rainchange">
         
                                                 </span>
-                                    </span>
-                                    <span class="me-4">
+                                            </span>
+                                            <span class="me-4">
                                                 <img src="images/icon-wind.png" alt="" class="me-1">
-                                            <span class="wind "></span>
-                                    </span>
-                                    <span class="me-4">
+                                            <span id="wind"></span>
+                                            </span>
+                                            <span class="me-4">
                                                 <img src="images/icon-compass.png" alt="" class="me-1">
-                                                <span class="wind-dir">
+                                                <span id="winddir">
                                                     
                                                 </span>
-                                    </span>
+                                            </span>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
+                            <div class="col-lg-8 ">
+                                <div class="row g-0 " id="otherDay">
+
+                                </div>
+
+                            </div>
+
                         </div>
                     </div>
-                    <div class="col-md-8  ">
-                        <div class="row  " id="otherDay">
-                        </div>
-                    </div>
+
                 </div>
+
             </div>
 
         </div>
@@ -126,11 +135,12 @@
                 <div class="col-md-7 ">
 
                     <div class="position-relative newInput ">
-                        <input type="text " class="form-control rounded-pill " placeholder="Find your location... " id="search ">
+                        <input type="text " class="w-100 rounded-pill " placeholder="Find your location... " id="search ">
                         <button class="position-absolute " type="button " value=" " id="submit ">Subscribe</button>
                     </div>
                     <div class="copyright mt-3 ">
-                        <p>Copyright 2014 Company name. Designed by Themezy. All rights reserved</p>
+
+                        <p>Copyright 2022. Designed by <span class="me">Ibrahim Fikry</span> . All rights reserved</p>
                     </div>
                 </div>
                 <div class="col-md-5 ">

@@ -135,7 +135,7 @@ footer button {
     padding: 14px 40px;
 }
 
-.location {
+.thelocation {
     font-size: 1.3rem;
 }
 
@@ -223,4 +223,8 @@ footer {
 
 .icon-box:hover {
     background-color: var(--main-color);
+}
+
+.me {
+    color: lightgreen;
 }
