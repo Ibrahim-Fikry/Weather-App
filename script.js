@@ -46,7 +46,8 @@ async function search(place = "cairo") {
         let finalResponse = await response.json();
         console.log(finalResponse)
         displayCurrent(finalResponse.location, finalResponse.current, finalResponse.forecast.forecastday[0]);
-        displayAnother(finalResponse.forecast.forecastday);
+        otherDay.innerHTML = "";
+        displayAnother(finalResponse.forecast.forecastday, finalResponse.location);
     }
 }
 search();
@@ -64,7 +65,7 @@ function displayCurrent(location, current, forcastNow) {
     winddir.innerHTML = forcastNow.hour[0].wind_dir;
 }
 
-function displayAnother(forCast) {
+function displayAnother(forCast, theplace) {
     let theotherDay = "";
     for (let i = 1; i < forCast.length; i++) {
         theotherDay += `
@@ -75,6 +76,7 @@ function displayAnother(forCast) {
             <span>${days[new Date(forCast[i].date).getDay()]}</span>
       </div>
               <div class="weather-card-body ">
+              <span>${theplace.name}</span>
                   <div class="deg-icon">
                       <img src="https:${forCast[i].day.condition.icon}" alt="">
                   </div>

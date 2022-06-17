@@ -118,10 +118,13 @@ footer button {
 
 /* --------------------------------weather----------------------------------------- */
 
+.weather .container {
+    padding: 0px
+}
+
 .all {
     background: rgb(50, 53, 68);
     border-radius: 10px;
-    border: green solid 2px;
     color: white;
 }
 
@@ -226,5 +229,5 @@ footer {
 }
 
 .me {
-    color: lightgreen;
+    color: var(--main-color)
 }

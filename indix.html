@@ -18,7 +18,7 @@
 <body>
     <!--navbar-->
     <nav class="navbar navbar-expand-lg   py-2 ">
-        <div class="container">
+        <div class="container  ">
             <a class="navbar-brand d-flex justify-content-center" href="#">
                 <img src="images/logo@2x.png" alt="" width="64" height="38">
                 <div class="logo-text d-inline-block ms-3">
@@ -55,9 +55,9 @@
         </div>
     </nav>
     <!-- content -->
-    <div class="content  p-2">
-        <div class="container ">
-            <div class="search-location position-relative " id="search">
+    <div class="content  p-2 ">
+        <div class="container mb-5 ">
+            <div class="search-location position-relative  mb-4 mt-3 " id="search">
                 <input type="text" class="w-100 rounded-pill " placeholder="Find your location..." id="search" oninput="search(this.value)">
                 <button class="position-absolute" type="button" value="" id="submit">Find</button>
             </div>
@@ -66,60 +66,55 @@
 
             <div class="weather  mt-2 mb-5 ">
                 <div class="container ">
-                    <div class="all  ">
-                        <div class="row g-0">
-                            <div class="col-lg-4 ">
-                                <div class="weather-card">
-                                    <div class="weather-hd d-flex justify-content-between ">
-                                        <span id="currentday"></span>
-                                        <span id="currentmonth"></span>
+                    <div class="row g-0 all">
+                        <div class="col-lg-4 ">
+                            <div class="weather-card">
+                                <div class="weather-hd d-flex justify-content-sm-around ">
+                                    <span id="currentday"></span>
+                                    <span id="currentmonth"></span>
+                                </div>
+                                <div class="weather-card-body ">
+                                    <div id="thelocation">
+
                                     </div>
-                                    <div class="weather-card-body ">
-                                        <div id="thelocation">
+                                    <div class="degree d-flex align-items-center justify-content-around ">
+                                        <div id="degnum">
+                                            <p>
+                                            </p>
+                                        </div>
+                                        <div id="degicon">
+                                        </div>
+                                    </div>
+                                    <div id="weatherstatus">
 
-                                        </div>
-                                        <div class="degree d-flex align-items-center ">
-                                            <div id="degnum">
-                                                <p>
-                                                </p>
-                                            </div>
-                                            <div id="degicon">
-                                            </div>
-                                        </div>
-                                        <div id="weatherstatus">
-
-                                        </div>
-                                        <div class="weather-more-details">
-                                            <span class="me-4">
+                                    </div>
+                                    <div class="weather-more-details">
+                                        <span class="me-4">
                                                 <img src="images/icon-umberella.png" alt="" class="me-1">
                                                 <span id="rainchange">
         
                                                 </span>
-                                            </span>
-                                            <span class="me-4">
+                                        </span>
+                                        <span class="me-4">
                                                 <img src="images/icon-wind.png" alt="" class="me-1">
                                             <span id="wind"></span>
-                                            </span>
-                                            <span class="me-4">
+                                        </span>
+                                        <span class="me-4">
                                                 <img src="images/icon-compass.png" alt="" class="me-1">
                                                 <span id="winddir">
                                                     
                                                 </span>
-                                            </span>
-                                        </div>
+                                        </span>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-lg-8 ">
-                                <div class="row g-0 " id="otherDay">
-
-                                </div>
+                        </div>
+                        <div class="col-lg-8 ">
+                            <div class="row g-0 " id="otherDay">
 
                             </div>
-
                         </div>
                     </div>
-
                 </div>
 
             </div>
@@ -129,21 +124,16 @@
 
 
     <!-- footer -->
-    <footer>
-        <div class=" container pt-5 ">
+    <footer class="pt-1">
+        <div class=" container pt-4 ">
             <div class="row ">
-                <div class="col-md-7 ">
-
+                <div class="col-md-4 ">
                     <div class="position-relative newInput ">
                         <input type="text " class="w-100 rounded-pill " placeholder="Find your location... " id="search ">
                         <button class="position-absolute " type="button " value=" " id="submit ">Subscribe</button>
                     </div>
-                    <div class="copyright mt-3 ">
-
-                        <p>Copyright 2022. Designed by <span class="me">Ibrahim Fikry</span> . All rights reserved</p>
-                    </div>
                 </div>
-                <div class="col-md-5 ">
+                <div class="col-md-4 ">
                     <div class="icon d-flex pb-4 justify-content-start justify-content-lg-center ">
                         <div class="icon-box d-flex justify-content-center align-items-center ">
                             <a href=" "> <i class=" fa-brands fa-facebook-f "></i></a>
@@ -157,6 +147,11 @@
                         <div class="icon-box d-flex justify-content-center align-items-center ">
                             <a href=" "> <i class="fa-brands fa-pinterest "></i></a>
                         </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="copyright pt-2">
+                        <p>Copyright 2022. Designed by <span class="me">Ibrahim Fikry</span></p>
                     </div>
                 </div>
             </div>
